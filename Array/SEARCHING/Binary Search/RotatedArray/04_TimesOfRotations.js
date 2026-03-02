@@ -13,5 +13,5 @@ while(low < high){
     }
 }
 
-console.log(`THe number of rotation taken is : ${low} `);
+console.log(`THe number of rotation taken is : ${low}`);
 
