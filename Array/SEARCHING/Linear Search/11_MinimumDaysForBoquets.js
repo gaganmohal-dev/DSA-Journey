@@ -24,8 +24,8 @@ function canIpluck(numOfDays,m,k, day){
 
 function MinimumDays(numOfDays,m,k){
     let maxDays = Math.max(...numOfDays)
-    
-    for(let day=1; day<=maxDays; day++){
+    let minDays = Math.min(...numOfDays)
+    for(let day=minDays; day<=maxDays; day++){
         if(canIpluck(numOfDays,m,k,day)){
           return day
         }
