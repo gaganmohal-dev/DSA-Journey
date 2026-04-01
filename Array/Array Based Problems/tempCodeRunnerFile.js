@@ -1,1 +1,1 @@
-t BruteResult
+emptyArr.push(arr[i]) 
