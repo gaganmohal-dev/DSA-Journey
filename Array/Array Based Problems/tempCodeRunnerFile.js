@@ -1,1 +1,1 @@
-emptyArr.push(arr[i]) 
+left
