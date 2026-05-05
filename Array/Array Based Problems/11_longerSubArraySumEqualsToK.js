@@ -25,7 +25,7 @@ let result =  longerSubArraySumBrute(arr, k)
 console.log(result);
 
 
-// Optimal Approach: Using Sliding Window
+// Optimal Approach: Using Sliding Window (only works for Positives)
 
 function longerSubArraySumOptimal(nums, k){
     let left = 0;
@@ -51,3 +51,38 @@ let nums = [10,5,2,7,1,9]
 let k2 = 15
 let result2 = longerSubArraySumOptimal(nums, k2)
 console.log(result2);
+
+
+// Optimal Approach: Hashmap (For both positives and Negatives)
+
+function longerSubArraySumHashing(arr,k){
+    let maxlen = 0;
+    let sum = 0;
+    let map = new Map();
+
+    for(let i=0; i<arr.length; i++){
+        sum = sum + arr[i];
+
+        if(sum == k){
+            maxlen = i + 1;
+        }
+
+        if(map.has(sum - k)){
+            let len = i - map.get(sum - k)
+            maxlen = Math.max(maxlen, len);
+        }
+
+        if(!map.has(sum)){
+            map.set(sum, i)
+        }
+    }
+
+    return maxlen;
+}
+
+let arr3 = [2,-2,2,-2,2]
+let k3 = 0
+let result3 = longerSubArraySumHashing(arr3, k3);
+console.log(result3);
+
+
